@@ -116,7 +116,7 @@ It includes the following fields:
 In addition to the two standard types and the sensor type enum, all drivers based on Adafruit_Sensor must also implement the following two functions:
 
 ```
-void getEvent(sensors\_event\_t*);
+void getEvent(sensors_event_t*);
 ```
 Calling this function will populated the supplied sensors\_event\_t reference with the latest available sensor data.  You should call this function as often as you want to update your data.
 
