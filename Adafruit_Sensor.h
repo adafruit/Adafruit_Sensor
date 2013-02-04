@@ -126,14 +126,6 @@ class Adafruit_Sensor {
   // These must be defined by the subclass
   virtual void getEvent(sensors_event_t*);
   virtual void getSensor(sensor_t*);
-
-  // These helper functions are defined in Adafruit_Sensor.cpp
-  size_t  serializeSensor(sensor_t);
-  size_t  serializeEvent(sensors_event_t);
-  size_t  logSensor(sensor_t);
-  size_t  logEvent(sensors_event_t);
-  int32_t average(int32_t values[], const size_t len);
-  float   average(float values[], const size_t len);
 };
 
 #endif
