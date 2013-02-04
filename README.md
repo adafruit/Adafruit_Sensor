@@ -1,4 +1,4 @@
-# Adafruit Sensor Abstraction Layer #
+# Adafruit Unified Sensor Driver #
 
 Many small embedded systems exist to collect data from sensors, analyse the data, and either take an appropriate action or send that sensor data to another system for processing.
 
@@ -8,11 +8,11 @@ Creating new drivers is a relatively easy task, but integrating them into existi
 
 By reducing all data to a single **sensors\_event\_t** 'type' and settling on specific, **standardised SI units** for each sensor family the same sensor types return values that are comparable with any other similar sensor.  This enables you to switch sensor models with very little impact on the rest of the system, which can help mitigate some of the risks and problems of sensor availability and code reuse.
 
-The sensor abstraction layer is also useful for data-logging and data-transmission.  The abstraction layer provides a single, well-understood and fixed-length record that can be recorded in your log files or transmitted to a target device without needing to know any HW-specific information.  Helper functions to that effect are provided in sensors.c, such as serialising sensor events and sensor details for transmission over the air or over a wire.
+The unified sensor abstraction layer is also useful for data-logging and data-transmission since you only have one well-known type to log or transmit over the air or wire.
 
 ## How Does it Work? ##
 
-Any driver the supports the Adafruit Sensor Abstraction Layer will implement the Adafruit\_Sensor base class.  There are two main typedefs and one enum defined in Adafruit_Sensor.h that are used to 'abstract' away the sensor details and values:
+Any driver the supports the Adafruit unified sensor abstraction layer will implement the Adafruit\_Sensor base class.  There are two main typedefs and one enum defined in Adafruit_Sensor.h that are used to 'abstract' away the sensor details and values:
 
 **Sensor Types (sensors\_type\_t)**
 
@@ -142,9 +142,9 @@ A key part of the abstraction layer is the standardisation of values on SI units
 - **voltage**: values are in **volts** (V)
 - **color**: values are in 0..1.0 RGB channel luminosity and 32-bit RGBA format
 
-## The Abstraction Layer in Practice ##
+## The Unified Driver Abstraction Layer in Practice ##
 
-Using the sensor abstraction layer is relatively easy once a compliant driver has been created.  
+Using the unified sensor abstraction layer is relatively easy once a compliant driver has been created.
 
 Every compliant sensor can now be read using a single, well-known 'type' (sensors\_event\_t), and there is a standardised way of interrogating a sensor about its specific capabilities (via sensor\_t).
 
