@@ -151,41 +151,41 @@ Every compliant sensor can now be read using a single, well-known 'type' (sensor
 An example of reading the TSL2561 light sensor can be seen below:
 
 ```
-Adafruit\_TSL2561 tsl = Adafruit\_TSL2561(TSL2561\_ADDR\_FLOAT, 12345);
-...
-/* Get a new sensor event */ 
-sensors\_event\_t event;
-tsl.getEvent(&event);
-
-/* Display the results (light is measured in lux) */
-if (event.light)
-{
-  Serial.print(event.light); Serial.println(" lux");
-}
-else
-{
-  /* If event.light = 0 lux the sensor is probably saturated
-     and no reliable data could be generated! */
-  Serial.println("Sensor overload");
-}
+ Adafruit_TSL2561 tsl = Adafruit_TSL2561(TSL2561_ADDR_FLOAT, 12345);
+ ...
+ /* Get a new sensor event */ 
+ sensors_event_t event;
+ tsl.getEvent(&event);
+ 
+ /* Display the results (light is measured in lux) */
+ if (event.light)
+ {
+   Serial.print(event.light); Serial.println(" lux");
+ }
+ else
+ {
+   /* If event.light = 0 lux the sensor is probably saturated
+      and no reliable data could be generated! */
+   Serial.println("Sensor overload");
+ }
 ```
 
 Similarly, we can get the basic technical capabilities of this sensor with the following code:
 
 ```
-sensor\_t sensor;
+ sensor_t sensor;
+ 
+ sensor_t sensor;
+ tsl.getSensor(&sensor);
 
-sensor_t sensor;
-tsl.getSensor(&sensor);
-
-/* Display the sensor details */
-Serial.println("------------------------------------");
-Serial.print  ("Sensor:       "); Serial.println(sensor.name);
-Serial.print  ("Driver Ver:   "); Serial.println(sensor.version);
-Serial.print  ("Unique ID:    "); Serial.println(sensor.sensor\_id);
-Serial.print  ("Max Value:    "); Serial.print(sensor.max\_value); Serial.println(" lux");
-Serial.print  ("Min Value:    "); Serial.print(sensor.min\_value); Serial.println(" lux");
-Serial.print  ("Resolution:   "); Serial.print(sensor.resolution); Serial.println(" lux");  
-Serial.println("------------------------------------");
-Serial.println("");
+ /* Display the sensor details */
+ Serial.println("------------------------------------");
+ Serial.print  ("Sensor:       "); Serial.println(sensor.name);
+ Serial.print  ("Driver Ver:   "); Serial.println(sensor.version);
+ Serial.print  ("Unique ID:    "); Serial.println(sensor.sensor_id);
+ Serial.print  ("Max Value:    "); Serial.print(sensor.max_value); Serial.println(" lux");
+ Serial.print  ("Min Value:    "); Serial.print(sensor.min_value); Serial.println(" lux");
+ Serial.print  ("Resolution:   "); Serial.print(sensor.resolution); Serial.println(" lux");  
+ Serial.println("------------------------------------");
+ Serial.println("");
 ```
