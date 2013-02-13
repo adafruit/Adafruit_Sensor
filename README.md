@@ -10,6 +10,20 @@ By reducing all data to a single **sensors\_event\_t** 'type' and settling on sp
 
 The unified sensor abstraction layer is also useful for data-logging and data-transmission since you only have one well-known type to log or transmit over the air or wire.
 
+## Unified Sensor Drivers ##
+
+The following drivers are based on the Adafruit Unified Sensor Driver:
+
+**Accelerometers**
+  - [Adafruit_ADXL345](https://github.com/adafruit/Adafruit_ADXL345)
+  - [Adafruit_MP303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
+
+**Light**
+  - [Adafruit_TSL2561](https://github.com/adafruit/Adafruit_TSL2561)
+
+**Magnetometers**
+  - [Adafruit_MP303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
+
 ## How Does it Work? ##
 
 Any driver the supports the Adafruit unified sensor abstraction layer will implement the Adafruit\_Sensor base class.  There are two main typedefs and one enum defined in Adafruit_Sensor.h that are used to 'abstract' away the sensor details and values:
