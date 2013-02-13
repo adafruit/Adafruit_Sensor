@@ -162,7 +162,7 @@ Using the unified sensor abstraction layer is relatively easy once a compliant d
 
 Every compliant sensor can now be read using a single, well-known 'type' (sensors\_event\_t), and there is a standardised way of interrogating a sensor about its specific capabilities (via sensor\_t).
 
-An example of reading the TSL2561 light sensor can be seen below:
+An example of reading the [TSL2561](https://github.com/adafruit/Adafruit_TSL2561) light sensor can be seen below:
 
 ```
  Adafruit_TSL2561 tsl = Adafruit_TSL2561(TSL2561_ADDR_FLOAT, 12345);
