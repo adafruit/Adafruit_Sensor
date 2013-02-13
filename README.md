@@ -16,13 +16,13 @@ The following drivers are based on the Adafruit Unified Sensor Driver:
 
 **Accelerometers**
   - [Adafruit_ADXL345](https://github.com/adafruit/Adafruit_ADXL345)
-  - [Adafruit_MP303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
+  - [Adafruit_LSM303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
 
 **Light**
   - [Adafruit_TSL2561](https://github.com/adafruit/Adafruit_TSL2561)
 
 **Magnetometers**
-  - [Adafruit_MP303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
+  - [Adafruit_LSM303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
 
 ## How Does it Work? ##
 
