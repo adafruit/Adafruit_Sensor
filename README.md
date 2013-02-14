@@ -24,6 +24,9 @@ The following drivers are based on the Adafruit Unified Sensor Driver:
 **Magnetometers**
   - [Adafruit_LSM303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
 
+**Barometric Pressure**
+  - [Adafruit_BMP085_Unified](https://github.com/adafruit/Adafruit_BMP085_Unified)
+
 ## How Does it Work? ##
 
 Any driver the supports the Adafruit unified sensor abstraction layer will implement the Adafruit\_Sensor base class.  There are two main typedefs and one enum defined in Adafruit_Sensor.h that are used to 'abstract' away the sensor details and values:
