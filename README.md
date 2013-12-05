@@ -15,17 +15,20 @@ The unified sensor abstraction layer is also useful for data-logging and data-tr
 The following drivers are based on the Adafruit Unified Sensor Driver:
 
 **Accelerometers**
-  - [Adafruit_ADXL345](https://github.com/adafruit/Adafruit_ADXL345)
-  - [Adafruit_LSM303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
+  - [Adafruit\_ADXL345](https://github.com/adafruit/Adafruit_ADXL345)
+  - [Adafruit\_LSM303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
+
+**Gyroscope**
+  - [Adafruit\_L3GD20\_U](https://github.com/adafruit/Adafruit_L3GD20_U)
 
 **Light**
-  - [Adafruit_TSL2561](https://github.com/adafruit/Adafruit_TSL2561)
+  - [Adafruit\_TSL2561](https://github.com/adafruit/Adafruit_TSL2561)
 
 **Magnetometers**
-  - [Adafruit_LSM303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
+  - [Adafruit\_LSM303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
 
 **Barometric Pressure**
-  - [Adafruit_BMP085_Unified](https://github.com/adafruit/Adafruit_BMP085_Unified)
+  - [Adafruit\_BMP085\_Unified](https://github.com/adafruit/Adafruit_BMP085_Unified)
 
 ## How Does it Work? ##
 
