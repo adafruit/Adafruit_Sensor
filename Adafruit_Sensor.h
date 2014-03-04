@@ -139,12 +139,15 @@ typedef struct
 class Adafruit_Sensor {
  public:
   // Constructor(s)
-  // Adafruit_Sensor();
   void constructor();
 
   // These must be defined by the subclass
+  virtual void enableAutoRange(bool enabled) {};
   virtual void getEvent(sensors_event_t*);
   virtual void getSensor(sensor_t*);
+  
+ private:
+  bool _autoRange;
 };
 
 #endif
