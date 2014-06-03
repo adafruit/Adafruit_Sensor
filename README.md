@@ -26,9 +26,12 @@ The following drivers are based on the Adafruit Unified Sensor Driver:
 
 **Magnetometers**
   - [Adafruit\_LSM303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
-
+  
 **Barometric Pressure**
   - [Adafruit\_BMP085\_Unified](https://github.com/adafruit/Adafruit_BMP085_Unified)
+
+**Humidity & Temperature**
+  - [Adafruit\_DHT\_Unified](https://github.com/adafruit/Adafruit_DHT_Unified)
 
 ## How Does it Work? ##
 
