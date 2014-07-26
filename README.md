@@ -2,7 +2,7 @@
 
 Many small embedded systems exist to collect data from sensors, analyse the data, and either take an appropriate action or send that sensor data to another system for processing.
 
-One of the many challenges of embedded systems design is the fact that parts you used today may be out of production tommorow, or system requirements may change and you may need to choose a different sensor down the road.
+One of the many challenges of embedded systems design is the fact that parts you used today may be out of production tomorrow, or system requirements may change and you may need to choose a different sensor down the road.
 
 Creating new drivers is a relatively easy task, but integrating them into existing systems is both error prone and time consuming since sensors rarely use the exact same units of measurement.
 
@@ -15,21 +15,27 @@ The unified sensor abstraction layer is also useful for data-logging and data-tr
 The following drivers are based on the Adafruit Unified Sensor Driver:
 
 **Accelerometers**
-  - [Adafruit_ADXL345](https://github.com/adafruit/Adafruit_ADXL345)
-  - [Adafruit_LSM303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
+  - [Adafruit\_ADXL345](https://github.com/adafruit/Adafruit_ADXL345)
+  - [Adafruit\_LSM303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
+
+**Gyroscope**
+  - [Adafruit\_L3GD20\_U](https://github.com/adafruit/Adafruit_L3GD20_U)
 
 **Light**
-  - [Adafruit_TSL2561](https://github.com/adafruit/Adafruit_TSL2561)
+  - [Adafruit\_TSL2561](https://github.com/adafruit/Adafruit_TSL2561)
 
 **Magnetometers**
-  - [Adafruit_LSM303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
-
+  - [Adafruit\_LSM303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
+  
 **Barometric Pressure**
-  - [Adafruit_BMP085_Unified](https://github.com/adafruit/Adafruit_BMP085_Unified)
+  - [Adafruit\_BMP085\_Unified](https://github.com/adafruit/Adafruit_BMP085_Unified)
+
+**Humidity & Temperature**
+  - [Adafruit\_DHT\_Unified](https://github.com/adafruit/Adafruit_DHT_Unified)
 
 ## How Does it Work? ##
 
-Any driver the supports the Adafruit unified sensor abstraction layer will implement the Adafruit\_Sensor base class.  There are two main typedefs and one enum defined in Adafruit_Sensor.h that are used to 'abstract' away the sensor details and values:
+Any driver that supports the Adafruit unified sensor abstraction layer will implement the Adafruit\_Sensor base class.  There are two main typedefs and one enum defined in Adafruit_Sensor.h that are used to 'abstract' away the sensor details and values:
 
 **Sensor Types (sensors\_type\_t)**
 
@@ -86,7 +92,7 @@ The individual fields are intended to be used as follows:
 - **max\_value**: The maximum value that this sensor can return (in the appropriate SI unit)
 - **min\_value**: The minimum value that this sensor can return (in the appropriate SI unit)
 - **resolution**: The smallest difference between two values that this sensor can report (in the appropriate SI unit)
-- **min\_delay**: The minimum delay in microsecond between two sensor event, or '0' if there is no constant sensor rate
+- **min\_delay**: The minimum delay in microseconds between two sensor events, or '0' if there is no constant sensor rate
 
 **Sensor Data/Events (sensors\_event\_t)**
 
@@ -135,7 +141,7 @@ In addition to the two standard types and the sensor type enum, all drivers base
 ```
 void getEvent(sensors_event_t*);
 ```
-Calling this function will populated the supplied sensors\_event\_t reference with the latest available sensor data.  You should call this function as often as you want to update your data.
+Calling this function will populate the supplied sensors\_event\_t reference with the latest available sensor data.  You should call this function as often as you want to update your data.
 
 ```
 void getSensor(sensor_t*);
