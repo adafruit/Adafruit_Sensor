@@ -143,7 +143,7 @@ class Adafruit_Sensor {
 
   // These must be defined by the subclass
   virtual void enableAutoRange(bool enabled) {};
-  virtual void getEvent(sensors_event_t*);
+  virtual bool getEvent(sensors_event_t*);
   virtual void getSensor(sensor_t*);
   
  private:
