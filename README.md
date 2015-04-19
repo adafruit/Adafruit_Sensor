@@ -17,18 +17,22 @@ The following drivers are based on the Adafruit Unified Sensor Driver:
 **Accelerometers**
   - [Adafruit\_ADXL345](https://github.com/adafruit/Adafruit_ADXL345)
   - [Adafruit\_LSM303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
+  - [Adafruit\_MMA8451\_Library](https://github.com/adafruit/Adafruit_MMA8451_Library)
 
 **Gyroscope**
   - [Adafruit\_L3GD20\_U](https://github.com/adafruit/Adafruit_L3GD20_U)
 
 **Light**
   - [Adafruit\_TSL2561](https://github.com/adafruit/Adafruit_TSL2561)
+  - [Adafruit\_TSL2591\_Library](https://github.com/adafruit/Adafruit_TSL2591_Library)
 
 **Magnetometers**
   - [Adafruit\_LSM303DLHC](https://github.com/adafruit/Adafruit_LSM303DLHC)
+  - [Adafruit\_HMC5883\_Unified](https://github.com/adafruit/Adafruit_HMC5883_Unified)
   
 **Barometric Pressure**
   - [Adafruit\_BMP085\_Unified](https://github.com/adafruit/Adafruit_BMP085_Unified)
+  - [Adafruit\_BMP183\_Unified\_Library](https://github.com/adafruit/Adafruit_BMP183_Unified_Library)
 
 **Humidity & Temperature**
   - [Adafruit\_DHT\_Unified](https://github.com/adafruit/Adafruit_DHT_Unified)
@@ -139,7 +143,7 @@ It includes the following fields:
 In addition to the two standard types and the sensor type enum, all drivers based on Adafruit_Sensor must also implement the following two functions:
 
 ```
-void getEvent(sensors_event_t*);
+bool getEvent(sensors_event_t*);
 ```
 Calling this function will populate the supplied sensors\_event\_t reference with the latest available sensor data.  You should call this function as often as you want to update your data.
 
