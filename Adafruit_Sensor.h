@@ -139,7 +139,7 @@ typedef struct
 class Adafruit_Sensor {
  public:
   // Constructor(s)
-  void constructor();
+  Adafruit_Sensor() {}
   virtual ~Adafruit_Sensor() {}
 
   // These must be defined by the subclass
