@@ -140,6 +140,7 @@ class Adafruit_Sensor {
  public:
   // Constructor(s)
   void constructor();
+  virtual ~Adafruit_Sensor() {}
 
   // These must be defined by the subclass
   virtual void enableAutoRange(bool enabled) {};
