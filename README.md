@@ -37,6 +37,9 @@ The following drivers are based on the Adafruit Unified Sensor Driver:
 **Humidity & Temperature**
   - [Adafruit\_DHT\_Unified](https://github.com/adafruit/Adafruit_DHT_Unified)
 
+**Orientation**
+ - [Adafruit_BNO055](https://github.com/adafruit/Adafruit_BNO055)
+
 ## How Does it Work? ##
 
 Any driver that supports the Adafruit unified sensor abstraction layer will implement the Adafruit\_Sensor base class.  There are two main typedefs and one enum defined in Adafruit_Sensor.h that are used to 'abstract' away the sensor details and values:
