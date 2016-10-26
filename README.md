@@ -35,7 +35,7 @@ The following drivers are based on the Adafruit Unified Sensor Driver:
   - [Adafruit\_BMP183\_Unified\_Library](https://github.com/adafruit/Adafruit_BMP183_Unified_Library)
 
 **Humidity & Temperature**
-  - [Adafruit\_DHT\_Unified](https://github.com/adafruit/Adafruit_DHT_Unified)
+  - [DHT-sensor-library](https://github.com/adafruit/DHT-sensor-library)
 
 **Orientation**
  - [Adafruit_BNO055](https://github.com/adafruit/Adafruit_BNO055)
