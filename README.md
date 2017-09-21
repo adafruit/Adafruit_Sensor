@@ -40,6 +40,11 @@ The following drivers are based on the Adafruit Unified Sensor Driver:
 **Orientation**
  - [Adafruit_BNO055](https://github.com/adafruit/Adafruit_BNO055)
 
+**All in one device**
+- [Adafruit_LSM9DS0](https://github.com/adafruit/Adafruit_LSM9DS0_Library) (accelerometer, gyroscope, magnetometer)
+- [Adafruit_LSM9DS1](https://github.com/adafruit/Adafruit_LSM9DS1/) (accelerometer, gyroscope, magnetometer)
+
+
 ## How Does it Work? ##
 
 Any driver that supports the Adafruit unified sensor abstraction layer will implement the Adafruit\_Sensor base class.  There are two main typedefs and one enum defined in Adafruit_Sensor.h that are used to 'abstract' away the sensor details and values:
