@@ -143,7 +143,7 @@ class Adafruit_Sensor {
   virtual ~Adafruit_Sensor() {}
 
   // These must be defined by the subclass
-  virtual void enableAutoRange(bool enabled) {};
+  virtual void enableAutoRange(bool enabled) { (void)enabled; // suppress unused warning };
   virtual bool getEvent(sensors_event_t*) = 0;
   virtual void getSensor(sensor_t*) = 0;
   
