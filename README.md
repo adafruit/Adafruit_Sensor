@@ -37,6 +37,9 @@ The following drivers are based on the Adafruit Unified Sensor Driver:
 **Humidity & Temperature**
   - [DHT-sensor-library](https://github.com/adafruit/DHT-sensor-library)
 
+**Humidity, Temperature, & Barometric Pressure**
+  - [Adafruit_BME280_Library](https://github.com/adafruit/Adafruit_BME280_Library/)
+
 **Orientation**
  - [Adafruit_BNO055](https://github.com/adafruit/Adafruit_BNO055)
 
