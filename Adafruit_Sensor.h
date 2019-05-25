@@ -20,7 +20,9 @@
 #ifndef _ADAFRUIT_SENSOR_H
 #define _ADAFRUIT_SENSOR_H
 
-#if ARDUINO >= 100
+#ifndef ARDUINO
+ #include <stdint.h>
+#elif ARDUINO >= 100
  #include "Arduino.h"
  #include "Print.h"
 #else
@@ -73,9 +75,9 @@ typedef struct {
         };
         /* Orientation sensors */
         struct {
-            float roll;    /**< Rotation around the longitudinal axis (the plane body, 'X axis'). Roll is positive and increasing when moving downward. -90°<=roll<=90° */
-            float pitch;   /**< Rotation around the lateral axis (the wing span, 'Y axis'). Pitch is positive and increasing when moving upwards. -180°<=pitch<=180°) */
-            float heading; /**< Angle between the longitudinal axis (the plane body) and magnetic north, measured clockwise when viewing from the top of the device. 0-359° */
+            float roll;    /**< Rotation around the longitudinal axis (the plane body, 'X axis'). Roll is positive and increasing when moving downward. -90Â°<=roll<=90Â° */
+            float pitch;   /**< Rotation around the lateral axis (the wing span, 'Y axis'). Pitch is positive and increasing when moving upwards. -180Â°<=pitch<=180Â°) */
+            float heading; /**< Angle between the longitudinal axis (the plane body) and magnetic north, measured clockwise when viewing from the top of the device. 0-359Â° */
         };
     };
     int8_t status;
@@ -144,7 +146,7 @@ class Adafruit_Sensor {
   virtual ~Adafruit_Sensor() {}
 
   // These must be defined by the subclass
-  virtual void enableAutoRange(bool enabled) {};
+  virtual void enableAutoRange(bool enabled) { (void)enabled; /* suppress unused warning */ };
   virtual bool getEvent(sensors_event_t*) = 0;
   virtual void getSensor(sensor_t*) = 0;
   
