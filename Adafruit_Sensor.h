@@ -150,8 +150,11 @@ class Adafruit_Sensor {
   virtual bool getEvent(sensors_event_t*) = 0;
   virtual void getSensor(sensor_t*) = 0;
   
+  void printSensorDetails(void);
+  
  private:
   bool _autoRange;
 };
+
 
 #endif
