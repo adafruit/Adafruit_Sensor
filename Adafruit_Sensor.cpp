@@ -49,6 +49,9 @@ void Adafruit_Sensor::printSensorDetails(void) {
   case SENSOR_TYPE_AMBIENT_TEMPERATURE:
     Serial.print(F("Ambient Temp (C)"));
     break;
+  case SENSOR_TYPE_OBJECT_TEMPERATURE:
+    Serial.print(F("Object Temp (C)"));
+    break;
   case SENSOR_TYPE_VOLTAGE:
     Serial.print(F("Voltage (V)"));
     break;
