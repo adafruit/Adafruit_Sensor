@@ -44,8 +44,9 @@
   (30.0F) /**< Minimum magnetic field on Earth's surface */
 #define SENSORS_PRESSURE_SEALEVELHPA                                           \
   (1013.25F) /**< Average sea level pressure is 1013.25 hPa */
-#define SENSORS_DPS_TO_RADS (0.017453293F) /**< Degrees/s to rad/s multiplier  \
-                                            */
+#define SENSORS_DPS_TO_RADS                                                    \
+  (0.017453293F) /**< Degrees/s to rad/s multiplier                            \
+                  */
 #define SENSORS_GAUSS_TO_MICROTESLA                                            \
   (100) /**< Gauss to micro-Tesla multiplier */
 
