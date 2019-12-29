@@ -80,13 +80,13 @@ typedef struct {
     struct {
       float roll; /**< Rotation around the longitudinal axis (the plane body, 'X
                      axis'). Roll is positive and increasing when moving
-                     downward. -90°<=roll<=90° */
+                     downward. -90 degrees <= roll <= 90 degrees */
       float pitch;   /**< Rotation around the lateral axis (the wing span, 'Y
                         axis'). Pitch is positive and increasing when moving
-                        upwards. -180°<=pitch<=180°) */
+                        upwards. -180 degrees <= pitch <= 180 degrees) */
       float heading; /**< Angle between the longitudinal axis (the plane body)
                         and magnetic north, measured clockwise when viewing from
-                        the top of the device. 0-359° */
+                        the top of the device. 0-359 degrees */
     };               ///< Struct for holding roll/pitch/heading
   };                 ///< Union that can hold 3D vector array, XYZ components or
                      ///< roll/pitch/heading
