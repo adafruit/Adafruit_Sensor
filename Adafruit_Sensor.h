@@ -29,10 +29,6 @@
 #include "WProgram.h"
 #endif
 
-/* Intentionally modeled after sensors.h in the Android API:
- * https://github.com/android/platform_hardware_libhardware/blob/master/include/hardware/sensors.h
- */
-
 /* Constants */
 #define SENSORS_GRAVITY_EARTH (9.80665F) /**< Earth's gravity in m/s^2 */
 #define SENSORS_GRAVITY_MOON (1.6F)      /**< The moon's gravity in m/s^2 */
@@ -74,40 +70,41 @@ typedef enum {
 /** struct sensors_vec_s is used to return a vector in a common format. */
 typedef struct {
   union {
-    float v[3];
+    float v[3]; ///< 3D vector elements
     struct {
-      float x;
-      float y;
-      float z;
-    };
+      float x; ///< X component of vector
+      float y; ///< Y component of vector
+      float z; ///< Z component of vector
+    };         ///< Struct for holding XYZ component
     /* Orientation sensors */
     struct {
       float roll; /**< Rotation around the longitudinal axis (the plane body, 'X
                      axis'). Roll is positive and increasing when moving
-                     downward. -90Â°<=roll<=90Â° */
+                     downward. -90°<=roll<=90° */
       float pitch;   /**< Rotation around the lateral axis (the wing span, 'Y
                         axis'). Pitch is positive and increasing when moving
-                        upwards. -180Â°<=pitch<=180Â°) */
+                        upwards. -180°<=pitch<=180°) */
       float heading; /**< Angle between the longitudinal axis (the plane body)
                         and magnetic north, measured clockwise when viewing from
-                        the top of the device. 0-359Â° */
-    };
-  };
-  int8_t status;
-  uint8_t reserved[3];
+                        the top of the device. 0-359° */
+    };               ///< Struct for holding roll/pitch/heading
+  };                 ///< Union that can hold 3D vector array, XYZ components or
+                     ///< roll/pitch/heading
+  int8_t status;     ///< Status byte
+  uint8_t reserved[3]; ///< Reserved
 } sensors_vec_t;
 
 /** struct sensors_color_s is used to return color data in a common format. */
 typedef struct {
   union {
-    float c[3];
+    float c[3]; ///< Raw 3-element data
     /* RGB color space */
     struct {
-      float r; /**< Red component */
-      float g; /**< Green component */
-      float b; /**< Blue component */
-    };
-  };
+      float r;   /**< Red component */
+      float g;   /**< Green component */
+      float b;   /**< Blue component */
+    };           ///< RGB data in floating point notation
+  };             ///< Union of various ways to describe RGB colorspace
   uint32_t rgba; /**< 24-bit RGBA value */
 } sensors_color_t;
 
@@ -121,7 +118,7 @@ typedef struct {
   int32_t reserved0; /**< reserved */
   int32_t timestamp; /**< time is in milliseconds */
   union {
-    float data[4];
+    float data[4];              ///< Raw data
     sensors_vec_t acceleration; /**< acceleration values are in meter per second
                                    per second (m/s^2) */
     sensors_vec_t
@@ -136,7 +133,7 @@ typedef struct {
     float current;           /**< current in milliamps (mA) */
     float voltage;           /**< voltage in volts (V) */
     sensors_color_t color;   /**< color in RGB component values */
-  };
+  };                         ///< Union for the wide ranges of data we can carry
 } sensors_event_t;
 
 /* Sensor details (40 bytes) */
@@ -155,6 +152,10 @@ typedef struct {
                         constant rate */
 } sensor_t;
 
+/** @brief Common sensor interface to unify various sensors.
+ * Intentionally modeled after sensors.h in the Android API:
+ * https://github.com/android/platform_hardware_libhardware/blob/master/include/hardware/sensors.h
+ */
 class Adafruit_Sensor {
 public:
   // Constructor(s)
@@ -162,10 +163,18 @@ public:
   virtual ~Adafruit_Sensor() {}
 
   // These must be defined by the subclass
+
+  /*! @brief Whether we should automatically change the range (if possible) for
+     higher precision
+      @param enabled True if we will try to autorange */
   virtual void enableAutoRange(bool enabled) {
     (void)enabled; /* suppress unused warning */
   };
+
+  /*! @brief Get the latest sensor event
+      @returns True if able to fetch an event */
   virtual bool getEvent(sensors_event_t *) = 0;
+  /*! @brief Get info about the sensor itself */
   virtual void getSensor(sensor_t *) = 0;
 
   void printSensorDetails(void);
