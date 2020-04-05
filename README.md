@@ -56,7 +56,7 @@ Any driver that supports the Adafruit unified sensor abstraction layer will impl
 
 These pre-defined sensor types are used to properly handle the two related typedefs below, and allows us determine what types of units the sensor uses, etc.
 
-```
+```c++
 /** Sensor types */
 typedef enum
 {
@@ -82,7 +82,7 @@ typedef enum
 
 This typedef describes the specific capabilities of this sensor, and allows us to know what sensor we are using beneath the abstraction layer.
 
-```
+```c++
 /* Sensor details (40 bytes) */
 /** struct sensor_s is used to describe basic information about a specific sensor. */
 typedef struct
@@ -113,7 +113,7 @@ The individual fields are intended to be used as follows:
 
 This typedef is used to return sensor data from any sensor supported by the abstraction layer, using standard SI units and scales.
 
-```
+```c++
 /* Sensor event (36 bytes) */
 /** struct sensor_event_s is used to provide a single sensor event in a common format. */
 typedef struct
@@ -153,12 +153,12 @@ It includes the following fields:
 
 In addition to the two standard types and the sensor type enum, all drivers based on Adafruit_Sensor must also implement the following two functions:
 
-```
+```c++
 bool getEvent(sensors_event_t*);
 ```
 Calling this function will populate the supplied sensors\_event\_t reference with the latest available sensor data.  You should call this function as often as you want to update your data.
 
-```
+```c++
 void getSensor(sensor_t*);
 ```
 Calling this function will provide some basic information about the sensor (the sensor name, driver version, min and max values, etc.
@@ -188,7 +188,7 @@ Every compliant sensor can now be read using a single, well-known 'type' (sensor
 
 An example of reading the [TSL2561](https://github.com/adafruit/Adafruit_TSL2561) light sensor can be seen below:
 
-```
+```c++
  Adafruit_TSL2561 tsl = Adafruit_TSL2561(TSL2561_ADDR_FLOAT, 12345);
  ...
  /* Get a new sensor event */ 
@@ -210,7 +210,7 @@ An example of reading the [TSL2561](https://github.com/adafruit/Adafruit_TSL2561
 
 Similarly, we can get the basic technical capabilities of this sensor with the following code:
 
-```
+```c++
  sensor_t sensor;
  
  sensor_t sensor;
