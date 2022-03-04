@@ -52,7 +52,7 @@ The following drivers are based on the Adafruit Unified Sensor Driver:
 
 Any driver that supports the Adafruit unified sensor abstraction layer will implement the Adafruit\_Sensor base class.  There are two main typedefs and one enum defined in Adafruit_Sensor.h that are used to 'abstract' away the sensor details and values:
 
-**Sensor Types (sensors\_type\_t)**
+## Sensor Types (`sensors_type_t`)
 
 These pre-defined sensor types are used to properly handle the two related typedefs below, and allows us determine what types of units the sensor uses, etc.
 
@@ -78,7 +78,7 @@ typedef enum
 } sensors_type_t;
 ```
 
-**Sensor Details (sensor\_t)**
+## Sensor Details (`sensor_t`)
 
 This typedef describes the specific capabilities of this sensor, and allows us to know what sensor we are using beneath the abstraction layer.
 
@@ -109,7 +109,7 @@ The individual fields are intended to be used as follows:
 - **resolution**: The smallest difference between two values that this sensor can report (in the appropriate SI unit)
 - **min\_delay**: The minimum delay in microseconds between two sensor events, or '0' if there is no constant sensor rate
 
-**Sensor Data/Events (sensors\_event\_t)**
+## Sensor Data/Events (`sensors_event_t`)
 
 This typedef is used to return sensor data from any sensor supported by the abstraction layer, using standard SI units and scales.
 
@@ -149,7 +149,7 @@ It includes the following fields:
 - **timestamp**: time in milliseconds when the sensor value was read
 - **data[4]**: An array of four 32-bit values that allows us to encapsulate any type of sensor data via a simple union (further described below)
 
-**Required Functions**
+## Required Functions
 
 In addition to the two standard types and the sensor type enum, all drivers based on Adafruit_Sensor must also implement the following two functions:
 
@@ -163,7 +163,7 @@ void getSensor(sensor_t*);
 ```
 Calling this function will provide some basic information about the sensor (the sensor name, driver version, min and max values, etc.
 
-**Standardised SI values for sensors\_event\_t**
+## Standardised SI values for `sensors_event_t`
 
 A key part of the abstraction layer is the standardisation of values on SI units of a particular scale, which is accomplished via the data[4] union in sensors\_event\_t above.  This 16 byte union includes fields for each main sensor type, and uses the following SI units and scales:
 
