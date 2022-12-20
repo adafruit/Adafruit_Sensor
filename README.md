@@ -74,7 +74,10 @@ typedef enum
   SENSOR_TYPE_AMBIENT_TEMPERATURE   = (13),
   SENSOR_TYPE_VOLTAGE               = (15),
   SENSOR_TYPE_CURRENT               = (16),
-  SENSOR_TYPE_COLOR                 = (17)
+  SENSOR_TYPE_COLOR                 = (17),
+  SENSOR_TYPE_TVOC                  = (18),
+  SENSOR_TYPE_VOC_INDEX             = (19),
+  SENSOR_TYPE_NOX_INDEX             = (20)
 } sensors_type_t;
 ```
 
@@ -137,6 +140,9 @@ typedef struct
         float           relative_humidity;
         float           current;
         float           voltage;
+        float           tvoc;
+        float           voc_index;
+        float           nox_index;
         sensors_color_t color;
     };
 } sensors_event_t;
@@ -179,6 +185,10 @@ A key part of the abstraction layer is the standardisation of values on SI units
 - **current**: values are in **milliamps** (mA)
 - **voltage**: values are in **volts** (V)
 - **color**: values are in 0..1.0 RGB channel luminosity and 32-bit RGBA format
+- **tvoc**: values are in **parts per billion** (ppb)
+- **voc_index**: values are an **index** from 1-500 with 100 being normal
+- **nox_index**: values are an **index** from 1-500 with 100 being normal
+
 
 ## The Unified Driver Abstraction Layer in Practice ##
 

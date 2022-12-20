@@ -64,6 +64,12 @@ void Adafruit_Sensor::printSensorDetails(void) {
   case SENSOR_TYPE_TVOC:
     Serial.print(F("Total Volatile Organic Compounds (ppb)"));
     break;
+  case SENSOR_TYPE_VOC_INDEX:
+    Serial.print(F("Volatile Organic Compounds (Index)"));
+    break;
+  case SENSOR_TYPE_NOX_INDEX:
+    Serial.print(F("Nitrogen Oxides (Index)"));
+    break;
   }
 
   Serial.println();
