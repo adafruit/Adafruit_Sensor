@@ -138,9 +138,10 @@ typedef struct {
     float current;           /**< current in milliamps (mA) */
     float voltage;           /**< voltage in volts (V) */
     float tvoc;              /**< Total Volatile Organic Compounds, in ppb */
-    int32_t voc_index; /**< VOC (Volatile Organic Compound) index where 100 is
-                          normal */
-    int32_t nox_index; /**< NOx (Nitrogen Oxides) index where 100 is normal */
+    float voc_index; /**< VOC (Volatile Organic Compound) index where 100 is
+                          normal (unitless) */
+    float nox_index; /**< NOx (Nitrogen Oxides) index where 100 is normal
+                          (unitless) */
     sensors_color_t color; /**< color in RGB component values */
   };                       ///< Union for the wide ranges of data we can carry
 } sensors_event_t;

@@ -141,8 +141,8 @@ typedef struct
         float           current;
         float           voltage;
         float           tvoc;
-        int32_t         voc_index;
-        int32_t         nox_index;
+        float           voc_index;
+        float           nox_index;
         sensors_color_t color;
     };
 } sensors_event_t;
