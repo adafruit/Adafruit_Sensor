@@ -97,6 +97,9 @@ void Adafruit_Sensor::printSensorDetails(void) {
   case SENSOR_TYPE_GAS_RESISTANCE:
     Serial.print(F("Gas Resistance (ohms)"));
     break;
+  case SENSOR_TYPE_UNITLESS_PERCENT:
+    Serial.print(F("Unitless Percent (%)"));
+    break;
   }
 
   Serial.println();
