@@ -155,17 +155,17 @@ typedef struct {
     float CO2;       /**< Measured CO2 in parts per million (ppm) */
     float eCO2;      /**< equivalent/estimated CO2 in parts per million (ppm
                         estimated from some other measurement) */
-    float pm10_std;  /**< Standard Particulate Matter 1.0 in parts per million
+    float pm10_std;  /**< Standard Particulate Matter <=1.0 in parts per million
                         (ppm) */
-    float pm25_std;  /**< Standard Particulate Matter 2.5 in parts per million
+    float pm25_std;  /**< Standard Particulate Matter <=2.5 in parts per million
                         (ppm) */
-    float pm100_std; /**< Standard Particulate Matter 100 in parts per million
-                        (ppm) */
-    float pm10_env;  /**< Environmental Particulate Matter 1.0 in parts per
+    float pm100_std; /**< Standard Particulate Matter <=10.0 in parts per
                         million (ppm) */
-    float pm25_env;  /**< Environmental Particulate Matter 2.5 in parts per
+    float pm10_env;  /**< Environmental Particulate Matter <=1.0 in parts per
                         million (ppm) */
-    float pm100_env; /**< Environmental Particulate Matter 100 in parts per
+    float pm25_env;  /**< Environmental Particulate Matter <=2.5 in parts per
+                        million (ppm) */
+    float pm100_env; /**< Environmental Particulate Matter <=10.0 in parts per
                         million (ppm) */
     float gas_resistance;   /**< Proportional to the amount of VOC particles in
                                the air (Ohms) */

@@ -83,7 +83,7 @@ void Adafruit_Sensor::printSensorDetails(void) {
     Serial.print(F("Standard Particulate Matter 2.5 (ppm)"));
     break;
   case SENSOR_TYPE_PM100_STD:
-    Serial.print(F("Standard Particulate Matter 100 (ppm)"));
+    Serial.print(F("Standard Particulate Matter 10.0 (ppm)"));
     break;
   case SENSOR_TYPE_PM10_ENV:
     Serial.print(F("Environmental Particulate Matter 1.0 (ppm)"));
@@ -92,7 +92,7 @@ void Adafruit_Sensor::printSensorDetails(void) {
     Serial.print(F("Environmental Particulate Matter 2.5 (ppm)"));
     break;
   case SENSOR_TYPE_PM100_ENV:
-    Serial.print(F("Environmental Particulate Matter 100 (ppm)"));
+    Serial.print(F("Environmental Particulate Matter 10.0 (ppm)"));
     break;
   case SENSOR_TYPE_GAS_RESISTANCE:
     Serial.print(F("Gas Resistance (ohms)"));
