@@ -70,6 +70,12 @@ void Adafruit_Sensor::printSensorDetails(void) {
   case SENSOR_TYPE_NOX_INDEX:
     Serial.print(F("Nitrogen Oxides (Index)"));
     break;
+  case SENSOR_TYPE_CO2:
+    Serial.print(F("Carbon Dioxide (ppm)"));
+    break;
+  case SENSOR_TYPE_eCO2:
+    Serial.print(F("Equivalent/estimated CO2 (ppm)"));
+    break;
   }
 
   Serial.println();

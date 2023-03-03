@@ -69,7 +69,9 @@ typedef enum {
   SENSOR_TYPE_COLOR = (17),
   SENSOR_TYPE_TVOC = (18),
   SENSOR_TYPE_VOC_INDEX = (19),
-  SENSOR_TYPE_NOX_INDEX = (20)
+  SENSOR_TYPE_NOX_INDEX = (20),
+  SENSOR_TYPE_CO2 = (21),
+  SENSOR_TYPE_eCO2 = (22),
 } sensors_type_t;
 
 /** struct sensors_vec_s is used to return a vector in a common format. */
@@ -142,6 +144,9 @@ typedef struct {
                           normal (unitless) */
     float nox_index; /**< NOx (Nitrogen Oxides) index where 100 is normal
                           (unitless) */
+    float CO2;       /**< Measured CO2 in parts per million (ppm) */
+    float eCO2;      /**< equivalent/estimated CO2 in parts per million (ppm
+                        estimated from some other measurement) */
     sensors_color_t color; /**< color in RGB component values */
   };                       ///< Union for the wide ranges of data we can carry
 } sensors_event_t;
