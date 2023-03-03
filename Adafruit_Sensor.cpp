@@ -76,6 +76,24 @@ void Adafruit_Sensor::printSensorDetails(void) {
   case SENSOR_TYPE_eCO2:
     Serial.print(F("Equivalent/estimated CO2 (ppm)"));
     break;
+  case SENSOR_TYPE_PM10_STD:
+    Serial.print(F("Standard Particulate Matter 1.0 (ppm)"));
+    break;
+  case SENSOR_TYPE_PM25_STD:
+    Serial.print(F("Standard Particulate Matter 2.5 (ppm)"));
+    break;
+  case SENSOR_TYPE_PM100_STD:
+    Serial.print(F("Standard Particulate Matter 100 (ppm)"));
+    break;
+  case SENSOR_TYPE_PM10_ENV:
+    Serial.print(F("Environmental Particulate Matter 1.0 (ppm)"));
+    break;
+  case SENSOR_TYPE_PM25_ENV:
+    Serial.print(F("Environmental Particulate Matter 2.5 (ppm)"));
+    break;
+  case SENSOR_TYPE_PM100_ENV:
+    Serial.print(F("Environmental Particulate Matter 100 (ppm)"));
+    break;
   }
 
   Serial.println();

@@ -80,6 +80,12 @@ typedef enum
   SENSOR_TYPE_NOX_INDEX             = (20),
   SENSOR_TYPE_CO2                   = (21),
   SENSOR_TYPE_eCO2                  = (22),
+  SENSOR_TYPE_PM10_STD              = (23),
+  SENSOR_TYPE_PM25_STD              = (24),
+  SENSOR_TYPE_PM100_STD             = (25),
+  SENSOR_TYPE_PM10_ENV              = (26),
+  SENSOR_TYPE_PM25_ENV              = (27),
+  SENSOR_TYPE_PM100_ENV             = (28)
 } sensors_type_t;
 ```
 
@@ -147,6 +153,12 @@ typedef struct
         float           nox_index;
         float           CO2,
         float           eCO2,
+        float           pm10_std,
+        float           pm25_std,
+        float           pm100_std,
+        float           pm10_env,
+        float           pm25_env,
+        float           pm100_env,
         sensors_color_t color;
     };
 } sensors_event_t;
@@ -194,7 +206,12 @@ A key part of the abstraction layer is the standardisation of values on SI units
 - **nox_index**: values are an **index** from 1-500 with 100 being normal
 - **CO2**: values are in **parts per million*** (ppm)
 - **eCO2**: values are in **parts per million*** (ppm)
-
+- **pm10_std**: values are in **parts per million*** (ppm)
+- **pm25_std**: values are in **parts per million*** (ppm)
+- **pm100_std**: values are in **parts per million*** (ppm)
+- **pm10_env**: values are in **parts per million*** (ppm)
+- **pm25_env**: values are in **parts per million*** (ppm)
+- **pm100_env**: values are in **parts per million*** (ppm)
 
 ## The Unified Driver Abstraction Layer in Practice ##
 
