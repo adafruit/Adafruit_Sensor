@@ -84,7 +84,7 @@ Public Attributes</h2></td></tr>
 union {</td></tr>
 <tr class="memitem:a7c9d608aead487d01c93b4338a66c5a8"><td class="memItemLeft" >
 &#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="structsensors__event__t.html#addee33a715123e16eb463e5cc9024fe2">data</a> [4]</td></tr>
-<tr class="memdesc:a7c9d608aead487d01c93b4338a66c5a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw data. <br /></td></tr>
+<tr class="memdesc:a7c9d608aead487d01c93b4338a66c5a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw data */. <br /></td></tr>
 <tr class="separator:a7c9d608aead487d01c93b4338a66c5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97ecd297dcb13768bc7ee2581eb72824"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structsensors__vec__t.html">sensors_vec_t</a>&#160;&#160;&#160;<a class="el" href="structsensors__event__t.html#a91a4325f468d3155e6921358a6f61baa">acceleration</a></td></tr>
 <tr class="separator:a97ecd297dcb13768bc7ee2581eb72824"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,6 +130,10 @@ union {</td></tr>
 <tr class="separator:a4b296f0cf3401b4125531504da63d6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab92117ffcca5406dec44f6cf74221209"><td class="memItemLeft" >&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="structsensors__event__t.html#ab10c9fae55f89daeeb9fceee6ad2d11e">pm100_env</a></td></tr>
 <tr class="separator:ab92117ffcca5406dec44f6cf74221209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a272fbf767904afe1490a3df1bb8a6c4f"><td class="memItemLeft" >&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="structsensors__event__t.html#aa297983cba5ffe01b42962a6d7a58b5d">gas_resistance</a></td></tr>
+<tr class="separator:a272fbf767904afe1490a3df1bb8a6c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10bbab5f0fe61ac36d3c672ef2778d50"><td class="memItemLeft" >&#160;&#160;&#160;float&#160;&#160;&#160;<a class="el" href="structsensors__event__t.html#a1f3d1603fa4fc755c13ee4ad0cdfb8df">unitless_percent</a></td></tr>
+<tr class="separator:a10bbab5f0fe61ac36d3c672ef2778d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe61b10a98efe7be5163598a5a68058e"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structsensors__color__t.html">sensors_color_t</a>&#160;&#160;&#160;<a class="el" href="structsensors__event__t.html#a56b4d05fbf47013727ec1a0a94db91e6">color</a></td></tr>
 <tr class="separator:afe61b10a98efe7be5163598a5a68058e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65765f2fda6943ab0fa6ef1d4b9d7d35"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
@@ -540,7 +544,37 @@ union {</td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>EnvironmentalParticulate Matter 100 in parts per million (ppm) </p>
+<p>Environmental Particulate Matter 100 in parts per million (ppm) </p>
+
+</div>
+</div>
+<a id="aa297983cba5ffe01b42962a6d7a58b5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa297983cba5ffe01b42962a6d7a58b5d">&#9670;&nbsp;</a></span>gas_resistance</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float sensors_event_t::gas_resistance</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Proportional to the amount of VOC particles in the air (Ohms) </p>
+
+</div>
+</div>
+<a id="a1f3d1603fa4fc755c13ee4ad0cdfb8df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f3d1603fa4fc755c13ee4ad0cdfb8df">&#9670;&nbsp;</a></span>unitless_percent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float sensors_event_t::unitless_percent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Percentage, unit-less (%) </p>
 
 </div>
 </div>
