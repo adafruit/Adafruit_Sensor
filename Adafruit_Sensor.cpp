@@ -73,7 +73,7 @@ void Adafruit_Sensor::printSensorDetails(void) {
   case SENSOR_TYPE_CO2:
     Serial.print(F("Carbon Dioxide (ppm)"));
     break;
-  case SENSOR_TYPE_eCO2:
+  case SENSOR_TYPE_ECO2:
     Serial.print(F("Equivalent/estimated CO2 (ppm)"));
     break;
   case SENSOR_TYPE_PM10_STD:
