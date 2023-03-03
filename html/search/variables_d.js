@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['temperature',['temperature',['../structsensors__event__t.html#a914f76beb75bd99aa3c13d3a8e56e21c',1,'sensors_event_t']]],
-  ['timestamp',['timestamp',['../structsensors__event__t.html#acd3be1560458b3e3bf52f93f744e8238',1,'sensors_event_t']]],
-  ['tvoc',['tvoc',['../structsensors__event__t.html#a6ce5ca5bb4ab3f8a6861fc965a154599',1,'sensors_event_t']]],
-  ['type',['type',['../structsensors__event__t.html#a58401dd7f3400d9eb96c71b8fba9f8e8',1,'sensors_event_t::type()'],['../structsensor__t.html#ae1d59df64438923d3bd95f2416c32203',1,'sensor_t::type()']]]
+  ['sensor_5fid',['sensor_id',['../structsensors__event__t.html#a6b06d35b17afbee79de7f45d9d71ed0b',1,'sensors_event_t::sensor_id()'],['../structsensor__t.html#a224f6201d59873cc1b6e9dd8a1894736',1,'sensor_t::sensor_id()']]],
+  ['status',['status',['../structsensors__vec__t.html#af75d491f35f979932de5609d6ef6c363',1,'sensors_vec_t']]]
 ];

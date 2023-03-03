@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['light',['light',['../structsensors__event__t.html#adefd2ce2da44e4449ef7cadeaecc6cfd',1,'sensors_event_t']]]
+  ['heading',['heading',['../structsensors__vec__t.html#a4fe8caabff59868ff44f1ed8334cbf47',1,'sensors_vec_t']]]
 ];
