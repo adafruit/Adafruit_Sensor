@@ -77,7 +77,9 @@ typedef enum
   SENSOR_TYPE_COLOR                 = (17),
   SENSOR_TYPE_TVOC                  = (18),
   SENSOR_TYPE_VOC_INDEX             = (19),
-  SENSOR_TYPE_NOX_INDEX             = (20)
+  SENSOR_TYPE_NOX_INDEX             = (20),
+  SENSOR_TYPE_CO2                   = (21),
+  SENSOR_TYPE_eCO2                  = (22),
 } sensors_type_t;
 ```
 
@@ -143,6 +145,8 @@ typedef struct
         float           tvoc;
         float           voc_index;
         float           nox_index;
+        float           CO2,
+        float           eCO2,
         sensors_color_t color;
     };
 } sensors_event_t;
@@ -188,6 +192,8 @@ A key part of the abstraction layer is the standardisation of values on SI units
 - **tvoc**: values are in **parts per billion** (ppb)
 - **voc_index**: values are an **index** from 1-500 with 100 being normal
 - **nox_index**: values are an **index** from 1-500 with 100 being normal
+- **CO2**: values are in **parts per million*** (ppm)
+- **eCO2**: values are in **parts per million*** (ppm)
 
 
 ## The Unified Driver Abstraction Layer in Practice ##
