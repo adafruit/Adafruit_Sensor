@@ -85,7 +85,9 @@ typedef enum
   SENSOR_TYPE_PM100_STD             = (25),
   SENSOR_TYPE_PM10_ENV              = (26),
   SENSOR_TYPE_PM25_ENV              = (27),
-  SENSOR_TYPE_PM100_ENV             = (28)
+  SENSOR_TYPE_PM100_ENV             = (28),
+  SENSOR_TYPE_GAS_RESISTANCE        = (29),
+  SENSOR_TYPE_UNITLESS_PERCENT      = (30)
 } sensors_type_t;
 ```
 
@@ -159,6 +161,8 @@ typedef struct
         float           pm10_env,
         float           pm25_env,
         float           pm100_env,
+        float           gas_resistance,
+        float           unitless_percent,
         sensors_color_t color;
     };
 } sensors_event_t;
@@ -187,7 +191,7 @@ Calling this function will provide some basic information about the sensor (the 
 
 ## Standardised SI values for `sensors_event_t`
 
-A key part of the abstraction layer is the standardisation of values on SI units of a particular scale, which is accomplished via the data[4] union in sensors\_event\_t above.  This 16 byte union includes fields for each main sensor type, and uses the following SI units and scales:
+A key part of the abstraction layer is the standardization of values on SI units of a particular scale, which is accomplished via the data[4] union in sensors\_event\_t above.  This 16 byte union includes fields for each main sensor type, and uses the following SI units and scales:
 
 - **acceleration**: values are in **meter per second per second** (m/s^2)
 - **magnetic**: values are in **micro-Tesla** (uT)
@@ -204,20 +208,22 @@ A key part of the abstraction layer is the standardisation of values on SI units
 - **tvoc**: values are in **parts per billion** (ppb)
 - **voc_index**: values are an **index** from 1-500 with 100 being normal
 - **nox_index**: values are an **index** from 1-500 with 100 being normal
-- **CO2**: values are in **parts per million*** (ppm)
-- **eCO2**: values are in **parts per million*** (ppm)
-- **pm10_std**: values are in **parts per million*** (ppm)
-- **pm25_std**: values are in **parts per million*** (ppm)
-- **pm100_std**: values are in **parts per million*** (ppm)
-- **pm10_env**: values are in **parts per million*** (ppm)
-- **pm25_env**: values are in **parts per million*** (ppm)
-- **pm100_env**: values are in **parts per million*** (ppm)
+- **CO2**: values are in **parts per million** (ppm)
+- **eCO2**: values are in **parts per million** (ppm)
+- **pm10_std**: values are in **parts per million** (ppm)
+- **pm25_std**: values are in **parts per million** (ppm)
+- **pm100_std**: values are in **parts per million** (ppm)
+- **pm10_env**: values are in **parts per million** (ppm)
+- **pm25_env**: values are in **parts per million** (ppm)
+- **pm100_env**: values are in **parts per million** (ppm)
+- **gas_resistance**: values are in **ohms**
+- **unitless_percent**: values are in **%**
 
 ## The Unified Driver Abstraction Layer in Practice ##
 
 Using the unified sensor abstraction layer is relatively easy once a compliant driver has been created.
 
-Every compliant sensor can now be read using a single, well-known 'type' (sensors\_event\_t), and there is a standardised way of interrogating a sensor about its specific capabilities (via sensor\_t).
+Every compliant sensor can now be read using a single, well-known 'type' (sensors\_event\_t), and there is a standardized way of interrogating a sensor about its specific capabilities (via sensor\_t).
 
 An example of reading the [TSL2561](https://github.com/adafruit/Adafruit_TSL2561) light sensor can be seen below:
 
