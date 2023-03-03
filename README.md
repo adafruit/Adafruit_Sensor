@@ -86,7 +86,8 @@ typedef enum
   SENSOR_TYPE_PM10_ENV              = (26),
   SENSOR_TYPE_PM25_ENV              = (27),
   SENSOR_TYPE_PM100_ENV             = (28),
-  SENSOR_TYPE_GAS_RESISTANCE        = (29)
+  SENSOR_TYPE_GAS_RESISTANCE        = (29),
+  SENSOR_TYPE_UNITLESS_PERCENT      = (30)
 } sensors_type_t;
 ```
 
