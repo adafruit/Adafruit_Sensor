@@ -77,7 +77,8 @@ typedef enum {
   SENSOR_TYPE_PM100_STD = (25),
   SENSOR_TYPE_PM10_ENV = (26),
   SENSOR_TYPE_PM25_ENV = (27),
-  SENSOR_TYPE_PM100_ENV = (28)
+  SENSOR_TYPE_PM100_ENV = (28),
+  SENSOR_TYPE_GAS_RESISTANCE = (29),
 } sensors_type_t;
 
 /** struct sensors_vec_s is used to return a vector in a common format. */
@@ -163,8 +164,10 @@ typedef struct {
                         million (ppm) */
     float pm25_env;  /**< Environmental Particulate Matter 2.5 in parts per
                         million (ppm) */
-    float pm100_env; /**< EnvironmentalParticulate Matter 100 in parts per
+    float pm100_env; /**< Environmental Particulate Matter 100 in parts per
                         million (ppm) */
+    float gas_resistance;  /**< Proportional to the amount of VOC particles in
+                              the air (Ohms) */
     sensors_color_t color; /**< color in RGB component values */
   };                       ///< Union for the wide ranges of data we can carry
 } sensors_event_t;

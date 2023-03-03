@@ -94,6 +94,9 @@ void Adafruit_Sensor::printSensorDetails(void) {
   case SENSOR_TYPE_PM100_ENV:
     Serial.print(F("Environmental Particulate Matter 100 (ppm)"));
     break;
+  case SENSOR_TYPE_GAS_RESISTANCE:
+    Serial.print(F("Gas Resistance (ohms)"));
+    break;
   }
 
   Serial.println();

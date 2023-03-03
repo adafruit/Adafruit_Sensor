@@ -85,7 +85,8 @@ typedef enum
   SENSOR_TYPE_PM100_STD             = (25),
   SENSOR_TYPE_PM10_ENV              = (26),
   SENSOR_TYPE_PM25_ENV              = (27),
-  SENSOR_TYPE_PM100_ENV             = (28)
+  SENSOR_TYPE_PM100_ENV             = (28),
+  SENSOR_TYPE_GAS_RESISTANCE        = (29)
 } sensors_type_t;
 ```
 
@@ -159,6 +160,7 @@ typedef struct
         float           pm10_env,
         float           pm25_env,
         float           pm100_env,
+        float           gas_resistance,
         sensors_color_t color;
     };
 } sensors_event_t;
@@ -204,14 +206,15 @@ A key part of the abstraction layer is the standardisation of values on SI units
 - **tvoc**: values are in **parts per billion** (ppb)
 - **voc_index**: values are an **index** from 1-500 with 100 being normal
 - **nox_index**: values are an **index** from 1-500 with 100 being normal
-- **CO2**: values are in **parts per million*** (ppm)
-- **eCO2**: values are in **parts per million*** (ppm)
-- **pm10_std**: values are in **parts per million*** (ppm)
-- **pm25_std**: values are in **parts per million*** (ppm)
-- **pm100_std**: values are in **parts per million*** (ppm)
-- **pm10_env**: values are in **parts per million*** (ppm)
-- **pm25_env**: values are in **parts per million*** (ppm)
-- **pm100_env**: values are in **parts per million*** (ppm)
+- **CO2**: values are in **parts per million** (ppm)
+- **eCO2**: values are in **parts per million** (ppm)
+- **pm10_std**: values are in **parts per million** (ppm)
+- **pm25_std**: values are in **parts per million** (ppm)
+- **pm100_std**: values are in **parts per million** (ppm)
+- **pm10_env**: values are in **parts per million** (ppm)
+- **pm25_env**: values are in **parts per million** (ppm)
+- **pm100_env**: values are in **parts per million** (ppm)
+- **gas_resistance**: values are in **ohms**
 
 ## The Unified Driver Abstraction Layer in Practice ##
 
