@@ -216,9 +216,6 @@ public:
   virtual void getSensor(sensor_t *) = 0;
 
   void printSensorDetails(void);
-
-private:
-  bool _autoRange;
 };
 
 #endif
