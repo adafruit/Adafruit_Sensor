@@ -87,7 +87,8 @@ typedef enum
   SENSOR_TYPE_PM25_ENV              = (27),
   SENSOR_TYPE_PM100_ENV             = (28),
   SENSOR_TYPE_GAS_RESISTANCE        = (29),
-  SENSOR_TYPE_UNITLESS_PERCENT      = (30)
+  SENSOR_TYPE_UNITLESS_PERCENT      = (30),
+  SENSOR_TYPE_ALTITUDE              = (31),
 } sensors_type_t;
 ```
 
@@ -163,6 +164,7 @@ typedef struct
         float           pm100_env,
         float           gas_resistance,
         float           unitless_percent,
+        float           altitude,
         sensors_color_t color;
     };
 } sensors_event_t;
@@ -218,6 +220,7 @@ A key part of the abstraction layer is the standardization of values on SI units
 - **pm100_env**: values are in **parts per million** (ppm)
 - **gas_resistance**: values are in **ohms**
 - **unitless_percent**: values are in **%**
+- **altitude**: values are in **meters** (m)
 
 ## The Unified Driver Abstraction Layer in Practice ##
 
