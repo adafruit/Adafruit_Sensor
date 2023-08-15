@@ -172,8 +172,9 @@ typedef struct {
                                the air (Ohms) */
     float unitless_percent; /**<Percentage, unit-less (%) */
     sensors_color_t color;  /**< color in RGB component values */
-    float altitude;         /**< Distance between a reference datum and a point or object, in meters. */
-  };                        ///< Union for the wide ranges of data we can carry
+    float altitude; /**< Distance between a reference datum and a point or
+                       object, in meters. */
+  };                ///< Union for the wide ranges of data we can carry
 } sensors_event_t;
 
 /* Sensor details (40 bytes) */
