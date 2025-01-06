@@ -151,7 +151,7 @@ typedef struct {
     float tvoc;              /**< Total Volatile Organic Compounds, in ppb */
     float voc_index; /**< VOC (Volatile Organic Compound) index where 100 is
                           normal (unitless) */
-    float nox_index; /**< NOx (Nitrogen Oxides) index where 100 is normal
+    float nox_index; /**< NOx (Nitrogen Oxides) index where 1 is normal
                           (unitless) */
     float CO2;       /**< Measured CO2 in parts per million (ppm) */
     float eCO2;      /**< equivalent/estimated CO2 in parts per million (ppm
