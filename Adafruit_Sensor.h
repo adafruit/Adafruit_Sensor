@@ -20,14 +20,7 @@
 #ifndef _ADAFRUIT_SENSOR_H
 #define _ADAFRUIT_SENSOR_H
 
-#ifndef ARDUINO
-#include <stdint.h>
-#elif ARDUINO >= 100
 #include "Arduino.h"
-#include "Print.h"
-#else
-#include "WProgram.h"
-#endif
 
 /* Constants */
 #define SENSORS_GRAVITY_EARTH (9.80665F) /**< Earth's gravity in m/s^2 */
@@ -91,7 +84,7 @@ typedef struct {
       float x; ///< X component of vector
       float y; ///< Y component of vector
       float z; ///< Z component of vector
-    };         ///< Struct for holding XYZ component
+    }; ///< Struct for holding XYZ component
     /* Orientation sensors */
     struct {
       float roll; /**< Rotation around the longitudinal axis (the plane body, 'X
@@ -103,10 +96,10 @@ typedef struct {
       float heading; /**< Angle between the longitudinal axis (the plane body)
                         and magnetic north, measured clockwise when viewing from
                         the top of the device. 0-359 degrees */
-    };               ///< Struct for holding roll/pitch/heading
-  };                 ///< Union that can hold 3D vector array, XYZ components or
-                     ///< roll/pitch/heading
-  int8_t status;     ///< Status byte
+    }; ///< Struct for holding roll/pitch/heading
+  }; ///< Union that can hold 3D vector array, XYZ components or
+     ///< roll/pitch/heading
+  int8_t status;       ///< Status byte
   uint8_t reserved[3]; ///< Reserved
 } sensors_vec_t;
 
@@ -116,11 +109,11 @@ typedef struct {
     float c[3]; ///< Raw 3-element data
     /* RGB color space */
     struct {
-      float r;   /**< Red component */
-      float g;   /**< Green component */
-      float b;   /**< Blue component */
-    };           ///< RGB data in floating point notation
-  };             ///< Union of various ways to describe RGB colorspace
+      float r; /**< Red component */
+      float g; /**< Green component */
+      float b; /**< Blue component */
+    }; ///< RGB data in floating point notation
+  }; ///< Union of various ways to describe RGB colorspace
   uint32_t rgba; /**< 24-bit RGBA value */
 } sensors_color_t;
 
@@ -174,7 +167,7 @@ typedef struct {
     sensors_color_t color;  /**< color in RGB component values */
     float altitude; /**< Distance between a reference datum and a point or
                        object, in meters. */
-  };                ///< Union for the wide ranges of data we can carry
+  }; ///< Union for the wide ranges of data we can carry
 } sensors_event_t;
 
 /* Sensor details (40 bytes) */
