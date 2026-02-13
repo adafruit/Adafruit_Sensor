@@ -34,18 +34,18 @@
 #define SENSORS_GRAVITY_MOON (1.6F)      /**< The moon's gravity in m/s^2 */
 #define SENSORS_GRAVITY_SUN (275.0F)     /**< The sun's gravity in m/s^2 */
 #define SENSORS_GRAVITY_STANDARD (SENSORS_GRAVITY_EARTH)
-#define SENSORS_MAGFIELD_EARTH_MAX \
+#define SENSORS_MAGFIELD_EARTH_MAX                                             \
   (60.0F) /**< Maximum magnetic field on Earth's surface */
-#define SENSORS_MAGFIELD_EARTH_MIN \
+#define SENSORS_MAGFIELD_EARTH_MIN                                             \
   (30.0F) /**< Minimum magnetic field on Earth's surface */
-#define SENSORS_PRESSURE_SEALEVELHPA \
+#define SENSORS_PRESSURE_SEALEVELHPA                                           \
   (1013.25F) /**< Average sea level pressure is 1013.25 hPa */
-#define SENSORS_DPS_TO_RADS                         \
-  (0.017453293F) /**< Degrees/s to rad/s multiplier \
+#define SENSORS_DPS_TO_RADS                                                    \
+  (0.017453293F) /**< Degrees/s to rad/s multiplier                            \
                   */
-#define SENSORS_RADS_TO_DPS \
+#define SENSORS_RADS_TO_DPS                                                    \
   (57.29577793F) /**< Rad/s to degrees/s  multiplier */
-#define SENSORS_GAUSS_TO_MICROTESLA \
+#define SENSORS_GAUSS_TO_MICROTESLA                                            \
   (100) /**< Gauss to micro-Tesla multiplier */
 
 /** Sensor types */
@@ -198,7 +198,7 @@ typedef struct {
  * https://github.com/android/platform_hardware_libhardware/blob/master/include/hardware/sensors.h
  */
 class Adafruit_Sensor {
- public:
+public:
   // Constructor(s)
   Adafruit_Sensor() {}
   virtual ~Adafruit_Sensor() {}
@@ -214,9 +214,9 @@ class Adafruit_Sensor {
 
   /*! @brief Get the latest sensor event
       @returns True if able to fetch an event */
-  virtual bool getEvent(sensors_event_t*) = 0;
+  virtual bool getEvent(sensors_event_t *) = 0;
   /*! @brief Get info about the sensor itself */
-  virtual void getSensor(sensor_t*) = 0;
+  virtual void getSensor(sensor_t *) = 0;
 
   void printSensorDetails(void);
 };
