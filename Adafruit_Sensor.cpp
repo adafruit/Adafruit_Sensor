@@ -103,6 +103,9 @@ void Adafruit_Sensor::printSensorDetails(void) {
   case SENSOR_TYPE_ALTITUDE:
     Serial.print(F("Altitude (m)"));
     break;
+  case SENSOR_TYPE_HCHO:
+    Serial.print(F("Formaldehyde (ppb)"));
+    break;
   }
 
   Serial.println();
